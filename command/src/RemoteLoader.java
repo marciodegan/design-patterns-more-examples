@@ -36,22 +36,47 @@ public class RemoteLoader {
         remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
         remoteControl.setCommand(3, stereoOnWithCD, stereoOffWithCD);
 
+        System.out.println("\n==1==\n");
         remoteControl.offButtonWasPushed(0);
         remoteControl.undoButtonWasPushed();
-        remoteControl.undoButtonWasPushed();
 
-        System.out.println("====");
+        System.out.println("\n==2==\n");
         remoteControl.onButtonWasPushed(1);
         remoteControl.undoButtonWasPushed();
 
-        System.out.println("====");
+        System.out.println("\n==3==\n");
         remoteControl.onButtonWasPushed(2);
         remoteControl.undoButtonWasPushed();
 
-        System.out.println("====");
+        System.out.println("\n==4==\n");
         remoteControl.onButtonWasPushed(3);
         remoteControl.undoButtonWasPushed();
 
+        System.out.println("\n==5==\n");
+        CeilingFan ceilingFanLivingRoom = new CeilingFan("Living Room");
+        CeilingFanHighCommand ceilingFanHighLivingRoom = new CeilingFanHighCommand(ceilingFanLivingRoom);
+        CeilingFanOffCommand ceilingFanOffLivingRoom = new CeilingFanOffCommand(ceilingFanLivingRoom);
+        remoteControl.setCommand(4, ceilingFanHighLivingRoom, ceilingFanOffLivingRoom);
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(4);
+        remoteControl.undoButtonWasPushed();
 
+        System.out.println("\n==6==\n");
+        CeilingFan ceilingFanKitchen = new CeilingFan("Kitchen");
+        CeilingFanHighCommand ceilingFanHighKitchen = new CeilingFanHighCommand(ceilingFanKitchen);
+        CeilingFanOffCommand ceilingFanOffKitchen = new CeilingFanOffCommand(ceilingFanKitchen);
+        remoteControl.setCommand(4, ceilingFanHighKitchen, ceilingFanOffKitchen);
+        remoteControl.onButtonWasPushed(4);
+        remoteControl.offButtonWasPushed(4);
+        remoteControl.undoButtonWasPushed();
+
+        System.out.println("\n==7==\n");
+        CeilingFanLowCommand ceilingFanMedium = new CeilingFanLowCommand(ceilingFanLivingRoom);
+        remoteControl.setCommand(5, ceilingFanHighLivingRoom, ceilingFanOffLivingRoom);
+        remoteControl.onButtonWasPushed(5);
+        remoteControl.offButtonWasPushed(5);
+        remoteControl.undoButtonWasPushed();
+
+        System.out.println(remoteControl);
      }
 }
