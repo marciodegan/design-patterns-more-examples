@@ -9,19 +9,19 @@ public class Stereo {
     }
 
     public void on(){
-        System.out.println("The stereo is on");
+        System.out.println(location + ": The stereo is on");
     }
 
     public void setCD(){
-        System.out.println("The CD is playing");
+        System.out.println(location + ": The CD is playing");
 
     }
 
     public void setVolume(int i) {
-        System.out.println("The volume is set to: "+ i);
+        System.out.println(location + ": The volume is set to: "+ i);
     }
 
     public void off() {
-        System.out.println("The stereo is now off");
+        System.out.println(location + ": The stereo is now off");
     }
 }

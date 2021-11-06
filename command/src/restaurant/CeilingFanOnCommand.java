@@ -10,7 +10,11 @@ public class CeilingFanOnCommand implements Command {
 
     @Override
     public void execute() {
-
         ceilingFan.on();
+    }
+
+    @Override
+    public void undo() {
+        ceilingFan.off();
     }
 }

@@ -3,10 +3,11 @@ package restaurant;
 public class NoCommand implements Command {
 
     @Override
-    public void execute() {
-    }
-}
+    public void execute() {}
 
+    @Override
+    public void undo() {}
+}
 
 /*
     O objeto NoCommand é um exemplo de um objeto nulo.

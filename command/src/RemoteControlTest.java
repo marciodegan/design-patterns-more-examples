@@ -1,8 +1,8 @@
-package restaurant;
-
 /*
 No jargão do Command Pattern, este é o nosso cliente (a classe RemoteControlTest).
 */
+
+import restaurant.*;
 
 public class RemoteControlTest {
 

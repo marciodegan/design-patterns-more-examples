@@ -1,6 +1,7 @@
 package restaurant;
 
 public class GarageDoorCloseCommand implements Command {
+
     GarageDoor garageDoor;
 
     public GarageDoorCloseCommand(GarageDoor garageDoor) {
@@ -9,5 +10,10 @@ public class GarageDoorCloseCommand implements Command {
 
     public void execute() {
         garageDoor.down();
+    }
+
+    @Override
+    public void undo() {
+        garageDoor.up();
     }
 }

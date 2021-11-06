@@ -9,10 +9,10 @@ public class Light {
     }
 
     public void on() {
-        System.out.println(location + "Light is ON");
+        System.out.println(location + ": Light is ON");
     }
 
     public void off() {
-        System.out.println(location + "Light is OFF");
+        System.out.println(location + ": Light is OFF");
     }
 }

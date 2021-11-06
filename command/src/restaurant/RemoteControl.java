@@ -7,6 +7,7 @@ package restaurant;
 public class RemoteControl {
     Command[] onCommands;
     Command[] offCommands;
+    Command undoCommand; // aqui armazenaremos o último comando executado para o botão undo.
 
     public RemoteControl() {
         onCommands = new Command[7];
@@ -18,6 +19,7 @@ public class RemoteControl {
             onCommands[i] = noCommand;
             offCommands[i] = noCommand;
         }
+        undoCommand = noCommand;
     }
 
 /*  O método setCommand() recebe uma posição de slot e os comandos On e Off para serem armazenados
@@ -28,14 +30,21 @@ public class RemoteControl {
     }
 
 
-/*  Quando um botão On ou Off é pressionado, o hardware encarrega-se de chamar
-    os métodos correspondentes, onButtonWasPushed() ou offButtonWasPushed(). */
+/*  Quando um botão On ou Off é pressionado, chama os métodos correspondentes,
+    onButtonWasPushed() ou offButtonWasPushed(). */
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
+        undoCommand = onCommands[slot];
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
+        undoCommand = offCommands[slot];
+    }
+
+    public void undoButtonWasPushed(){
+        System.out.println("* Undo Button was pressed");
+        undoCommand.undo();
     }
 
 /*  Sobrescrevemos toString() para imprimir cada slot e o respectivo comando. */
