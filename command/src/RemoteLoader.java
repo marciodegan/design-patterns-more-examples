@@ -78,5 +78,41 @@ public class RemoteLoader {
         remoteControl.undoButtonWasPushed();
 
         System.out.println(remoteControl);
+
+        System.out.println("\n==MACRO BUTTON==\n");
+        // criação dos dispositivos
+        Light lightSaloon = new Light("Saloon");
+        Stereo stereoSaloon = new Stereo("Saloon");
+        CeilingFan ceilingFanSaloon = new CeilingFan("Saloon");
+        Light lightKitchen = new Light("Kitchen");
+
+        // criação dos comandos
+        LightOnCommand lightOnSaloon = new LightOnCommand(lightSaloon);
+        LightOffCommand lightOffSaloon = new LightOffCommand(lightSaloon);
+        StereoOnWithCDCommand stereoOnSaloon = new StereoOnWithCDCommand(stereoSaloon);
+        StereoOffWithCDCommand stereoOffSaloon = new StereoOffWithCDCommand(stereoSaloon);
+        CeilingFanHighCommand ceilingFanHighSaloon = new CeilingFanHighCommand(ceilingFanSaloon);
+        CeilingFanOffCommand ceilingFanOffSaloon = new CeilingFanOffCommand(ceilingFanSaloon);
+        LightOnCommand lightOnKitchen = new LightOnCommand(lightKitchen);
+        LightOffCommand lightOffKitchen = new LightOffCommand(lightKitchen);
+
+        // matrizes para os comandos On e Off
+        Command[] partyOn = { lightOnSaloon, stereoOnSaloon, ceilingFanHighSaloon, lightOnKitchen };
+        Command[] partyOff = { lightOffSaloon, stereoOffSaloon, ceilingFanOffSaloon, lightOffKitchen};
+
+        // criação dos MacroCommands
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        // setando no slot
+        remoteControl.setCommand(6, partyOnMacro, partyOffMacro);
+
+        System.out.println(remoteControl);
+
+        System.out.println("==> pushing Macro button ON...");
+        remoteControl.onButtonWasPushed(6);
+        System.out.println("==> pushing Macro button OFF...");
+        remoteControl.offButtonWasPushed(6);
+        remoteControl.undoButtonWasPushed();
      }
 }

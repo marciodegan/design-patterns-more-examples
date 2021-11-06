@@ -25,17 +25,17 @@ public class CeilingFan {
 
     public void high() {
         speed = HIGH;
-        System.out.println("The ceiling fan´s speed is now HIGH: " + speed);
+        System.out.println(location +": The ceiling fan´s speed is now HIGH: " + speed);
     }
 
     public void medium() {
         speed = MEDIUM;
-        System.out.println("The ceiling fan´s speed is now MEDIUM: " + speed);
+        System.out.println(location + ": The ceiling fan´s speed is now MEDIUM: " + speed);
     }
 
     public void low() {
         speed = LOW;
-        System.out.println("The ceiling fan´s speed is now LOW: " + speed);
+        System.out.println(location + ": The ceiling fan´s speed is now LOW: " + speed);
     }
 
     public int getSpeed() {
