@@ -1,3 +1,4 @@
+
 public class TestesHomeTeather {
 
     public static void main(String[] args) {
@@ -13,5 +14,11 @@ public class TestesHomeTeather {
 
         System.out.println("===");
         homeTeatherFacade.endMovie("Titanic");
+
+        System.out.println("===");
+        homeTeatherFacade.playRadio(99.9);
+
+        System.out.println("===");
+        homeTeatherFacade.stopRadio();
     }
 }

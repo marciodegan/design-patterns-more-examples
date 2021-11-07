@@ -7,7 +7,6 @@ public class HomeTeatherFacade {
     Tuner tuner;
     Channel channel;
 
-
     public HomeTeatherFacade(Amplificador amp, Network provider, Projetor projetor, RoomLights roomLights, Tuner tuner, Channel channel) {
         this.amp = amp;
         this.provider = provider;
@@ -37,6 +36,20 @@ public class HomeTeatherFacade {
         roomLights.on();
         provider.off();
         projetor.off();
+        amp.off();
+    }
+
+    public void playRadio(double frequency) {
+        System.out.println("Playing radio...");
+        amp.on();
+        amp.setTuner(tuner);
+        tuner.on();
+        tuner.setFM(frequency);
+    }
+
+    public void stopRadio() {
+        System.out.println("turning radio off...");
+        tuner.off();
         amp.off();
     }
 }

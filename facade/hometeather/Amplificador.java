@@ -17,7 +17,7 @@ public class Amplificador {
     }
 
     public void setTuner(Tuner tuner) {
-        System.out.println(description + " setando tuner: " + tuner.description);
+        System.out.println("Amplificador " + description + " setado para tuner: " + tuner.description);
         this.tuner = tuner;
     }
 
