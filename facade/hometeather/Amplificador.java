@@ -1,6 +1,8 @@
 public class Amplificador {
 
     String description;
+    Tuner tuner;
+    Channel channel;
 
     public Amplificador(String description) {
         this.description = description;
@@ -12,5 +14,14 @@ public class Amplificador {
 
     public void off() {
         System.out.println("Amplificador " + description + ": OFF");
+    }
+
+    public void setTuner(Tuner tuner) {
+        System.out.println(description + " setando tuner: " + tuner.description);
+        this.tuner = tuner;
+    }
+
+    public void setChannel(Channel channel) {
+        this.channel = channel;
     }
 }

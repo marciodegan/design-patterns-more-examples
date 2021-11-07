@@ -1,15 +1,19 @@
 public class HomeTeatherFacade {
     Amplificador amp;
-    ChannelProvider provider;
+    Network provider;
     Projetor projetor;
     RoomLights roomLights;
     String movie;
+    Tuner tuner;
+    Channel channel;
 
-    public HomeTeatherFacade(Amplificador amp, ChannelProvider provider, Projetor projetor, RoomLights roomLights) {
+
+    public HomeTeatherFacade(Amplificador amp, Network provider, Projetor projetor, RoomLights roomLights, Tuner tuner, Channel channel) {
         this.amp = amp;
         this.provider = provider;
         this.projetor = projetor;
         this.roomLights = roomLights;
+        this.tuner = tuner;
     }
 
     /*
@@ -19,17 +23,20 @@ public class HomeTeatherFacade {
     public void watchMovie(String movie) {
         System.out.println("Preparando o vídeo...");
         amp.on();
-        roomLights.off();
+        amp.setTuner(tuner);
         projetor.on();
+        projetor.setChannel(3);
         provider.on();
+        roomLights.off();
         provider.play(movie);
     }
 
     public void endMovie(String Movie) {
         System.out.println("Finalizando o filme...");
-        amp.off();
+        provider.stop();
+        roomLights.on();
         provider.off();
         projetor.off();
-        roomLights.off();
+        amp.off();
     }
 }

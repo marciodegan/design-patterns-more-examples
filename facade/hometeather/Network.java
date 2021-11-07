@@ -1,9 +1,9 @@
-public class ChannelProvider {
+public class Network {
 
     String description;
     String movie;
 
-    public ChannelProvider(String description) {
+    public Network(String description) {
         this.description = description;
     }
 
@@ -17,5 +17,9 @@ public class ChannelProvider {
 
     public void play(String movie) {
         System.out.println(description + " is playing the movie: " + movie);
+    }
+
+    public void stop() {
+        System.out.println(description + " is stopping the movie... ");
     }
 }
