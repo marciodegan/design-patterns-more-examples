@@ -11,13 +11,13 @@ public class GumballMachineTests {
         System.out.println("\n== 1 ==");
         machine.insereMoeda();
         machine.giraAlavanca();
-        System.out.println(machine);
+        System.out.println(machine.state.getClass());
 
         System.out.println("\n== 2 ==");
         machine.insereMoeda();
         machine.ejetaMoeda();
         machine.giraAlavanca();
-        System.out.println(machine);
+        System.out.println(machine.state.getClass());
 
         System.out.println("\n== 3 ==");
         machine.insereMoeda();
@@ -25,19 +25,20 @@ public class GumballMachineTests {
         machine.insereMoeda();
         machine.giraAlavanca();
         machine.ejetaMoeda();
-        System.out.println(machine);
+        System.out.println(machine.state.getClass());
 
         System.out.println("\n== 4 ==");
         machine.insereMoeda();
+        System.out.println(machine.state.getClass());
+
         machine.insereMoeda();
         machine.giraAlavanca();
-        System.out.println(machine);
         machine.insereMoeda();
         machine.giraAlavanca();
-        System.out.println(machine);
+        System.out.println(machine.state.getClass());
         machine.insereMoeda();
         machine.giraAlavanca();
-        System.out.println(machine);
+        System.out.println(machine.state.getClass());
     }
 }
 
