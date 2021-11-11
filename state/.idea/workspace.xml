@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fcea73e6-fa47-4696-8ff6-18b4338c7142" name="Changes" comment="&quot;new&quot; first commit gumball machine example">
-      <change afterPath="$PROJECT_DIR$/src/gumballmachine/HasQuarterState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gumballmachine/NoQuarterState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gumballmachine/SoldOutState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gumballmachine/SoldState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gumballmachine/State.java" afterDir="false" />
+    <list default="true" id="fcea73e6-fa47-4696-8ff6-18b4338c7142" name="Changes" comment="refatorado: criado nova interface para State e classes para cada State.">
       <change afterPath="$PROJECT_DIR$/src/gumballmachine/WinnerState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/state/gumballmachine/GumballMachine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/state/gumballmachine/GumballMachine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/state/gumballmachine/GumballMachineTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/state/gumballmachine/GumballMachineTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/state/gumballmachine/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/state/gumballmachine/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gumballmachine/GumballMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/GumballMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gumballmachine/GumballMachineTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/GumballMachineTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gumballmachine/HasQuarterState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/HasQuarterState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gumballmachine/NoQuarterState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/NoQuarterState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gumballmachine/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gumballmachine/SoldOutState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gumballmachine/SoldOutState.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636487113444</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refatorado: criado nova interface para State e classes para cada State.">
+      <created>1636568058140</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1636568058140</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;new&quot; first commit gumball machine example" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;new&quot; first commit gumball machine example" />
+    <MESSAGE value="refatorado: criado nova interface para State e classes para cada State." />
+    <option name="LAST_COMMIT_MESSAGE" value="refatorado: criado nova interface para State e classes para cada State." />
   </component>
 </project>
