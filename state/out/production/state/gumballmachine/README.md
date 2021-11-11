@@ -12,7 +12,6 @@
 > devem ser abertas para extensão, mas fechadas para modificação. 
 > #### A entidade pode permitir que o seu comportamento seja estendido sem modificar seu código-fonte.
 
-
 - ENCAPSULAR O QUE VARIA: Delimitar o comportamento de cada estado. Assim quando fizermos mudanca num estado, nao correremos o risco de afetar o restante do codigo.
 - Se colocarmos o comportamento de cada estado dentro da sua proria classe, entao os estados individuais implementarão as suas próprias ações.
 - A maquina delega tarefas ao objeto que representa o estado atual.
@@ -23,3 +22,16 @@
 > 3) Removeremos todo o código condicional e, em vez disso, delegaremos as tarefas necessárias à classe do estado.
 >
 <img src="https://user-images.githubusercontent.com/58707950/141131310-0c8b0f83-349e-4581-aad6-918420788e7c.jpg" width="45%"></img> 
+
+### Com as mudanças realizadas no código, alteramos estruturalmente a implementação:
+- Confinamos o comportamento de cda estado dentro da sua respectiva classe.
+- Removemos todas as problemáticas instruções if, cuja manutenção seria muito dificil.
+- Protegemos cada estado contra modificações, deixando, ao mesmo tempo, a máquina aberta a futuras extensões através do acréscimo e novas classes de estados.
+- Criamos uma base de código e uma estrutura de classes que mapeia muito mais fielmente o diagrama da solução/aplicação, além de ser fácil de ler e compreender.
+- A máquina agora possui uma instância de cada classe de estado.
+- O estado atual da máquina sempre é uma destas instâncias de classe (NoQuarter, HasQuarter, Sold, SoldOut)
+- Quando uma ação é chamada, ela é delegada ao estado atual.
+
+> State - encapsula comportamentos baseados em estados e delega comportamentos ao estado atual
+> Strategy - as subclasses decidem como implementar os passos de um algoritmo
+> Template method - encapsula comportamentos intercambiaveis e usa delegação para decidir qual comportamento deve ser usado

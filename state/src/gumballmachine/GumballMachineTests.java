@@ -39,6 +39,12 @@ public class GumballMachineTests {
         machine.insereMoeda();
         machine.giraAlavanca();
         System.out.println(machine.state.getClass());
+
+        System.out.println(machine.getCount());;
+        machine.refill(20);
+        machine.insereMoeda();
+        machine.giraAlavanca();
+        System.out.println(machine.getCount());
     }
 }
 

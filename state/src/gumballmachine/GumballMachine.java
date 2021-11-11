@@ -7,6 +7,7 @@ public class GumballMachine {
     State noQuarterState;
     State hasQuarterState;
     State soldState;
+    State winnerState;
 
     State state = soldOutState; // Agora contém um objeto State, não mais um número inteiro.
     int count = 0; // segunda variavel de instancia que armazena o número de gomas na máquina.
@@ -16,6 +17,7 @@ public class GumballMachine {
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
         noQuarterState = new NoQuarterState(this);
+        winnerState = new WinnerState(this);
         this.count = count;
         if (count > 0) {
             state = noQuarterState;
@@ -43,6 +45,11 @@ public class GumballMachine {
         return state;
     }
 
+    void refill(int count) {
+        this.count = count;
+        state = noQuarterState;
+    }
+
     public State getSoldOutState() {
         return soldOutState;
     }
@@ -61,6 +68,10 @@ public class GumballMachine {
 
     public int getCount() {
         return count;
+    }
+
+    public State getWinnerState() {
+        return winnerState;
     }
 
     // método auxiliar da máquina que libera a gumball e decrementa a variável de instância count.

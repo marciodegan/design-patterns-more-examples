@@ -26,8 +26,12 @@
 ### Com as mudanças realizadas no código, alteramos estruturalmente a implementação:
 - Confinamos o comportamento de cda estado dentro da sua respectiva classe.
 - Removemos todas as problemáticas instruções if, cuja manutenção seria muito dificil.
-- Protegemos cada estado contra modificações, deixando, ao mesmo tempo, a máquina aberta a futuras extensões através do acréscimo e novas classes de estados.
+- Protegemos cada estado contra modificações, deixando, ao mesmo tempo, a máquina aberta a futuras extensões através do acréscimo de novas classes de estados.
 - Criamos uma base de código e uma estrutura de classes que mapeia muito mais fielmente o diagrama da solução/aplicação, além de ser fácil de ler e compreender.
 - A máquina agora possui uma instância de cada classe de estado.
 - O estado atual da máquina sempre é uma destas instâncias de classe (NoQuarter, HasQuarter, Sold, SoldOut)
 - Quando uma ação é chamada, ela é delegada ao estado atual.
+
+> State - encapsula comportamentos baseados em estados e delega comportamentos ao estado atual
+> Strategy - as subclasses decidem como implementar os passos de um algoritmo
+> Template method - encapsula comportamentos intercambiaveis e usa delegação para decidir qual comportamento deve ser usado

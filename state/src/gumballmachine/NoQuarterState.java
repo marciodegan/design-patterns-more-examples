@@ -16,19 +16,13 @@ public class NoQuarterState implements State {
     }
 
     @Override
-    public void ejectQuarter() {
-        System.out.println("NoQuarterState: no quarter to eject");
-    }
+    public void ejectQuarter() {System.out.println("NoQuarterState: no quarter to eject");}
 
     @Override
-    public void turnCrank() {
-        System.out.println("NoQuarterState: You turned but there´s no quarter | NO_QUARTER to NO_QUARTER");
-    }
+    public void turnCrank() {System.out.println("NoQuarterState: You turned but there´s no quarter | NO_QUARTER to NO_QUARTER");}
 
     @Override
-    public void dispense() {
-        System.out.println("NoQuarterState: You need to insert a quarter first");
-    }
+    public void dispense() {System.out.println("NoQuarterState: You need to insert a quarter first");}
 
 
 }
