@@ -3,48 +3,35 @@ package gumballmachine;
 public class GumballMachineTests {
     public static void main(String[] args) {
 
-        GumballMachine machine = new GumballMachine(5);
+        int count = 0;
 
-        System.out.println(machine);
-        System.out.println("Estoque: " + machine.count);
+        if (args.length < 2) {
+            System.out.println("GumballMachine <name> <inventory>");
+            System.exit(1);
+        }
 
-        System.out.println("\n== 1 ==");
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        System.out.println(machine.state.getClass());
+        try {
+            count = Integer.parseInt(args[1]);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+//        GumballMachine gumballMachine = new GumballMachine(args[0], count);
+        GumballMachine gumballMachine = new GumballMachine("local 1", 10);
+        System.out.println(gumballMachine.getCount());
+        MachineMonitor monitor = new MachineMonitor(gumballMachine);
+        System.out.println(monitor);
 
-        System.out.println("\n== 2 ==");
-        machine.insereMoeda();
-        machine.ejetaMoeda();
-        machine.giraAlavanca();
-        System.out.println(machine.state.getClass());
+        System.out.println(gumballMachine);
 
-        System.out.println("\n== 3 ==");
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        machine.ejetaMoeda();
-        System.out.println(machine.state.getClass());
+        gumballMachine.insereMoeda();
+        gumballMachine.giraAlavanca();
+        gumballMachine.insereMoeda();
+        gumballMachine.giraAlavanca();
 
-        System.out.println("\n== 4 ==");
-        machine.insereMoeda();
-        System.out.println(machine.state.getClass());
+        System.out.println(gumballMachine);
+        monitor.report();
 
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        System.out.println(machine.state.getClass());
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        System.out.println(machine.state.getClass());
-
-        System.out.println(machine.getCount());;
-        machine.refill(20);
-        machine.insereMoeda();
-        machine.giraAlavanca();
-        System.out.println(machine.getCount());
     }
 }
 
