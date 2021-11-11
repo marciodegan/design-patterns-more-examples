@@ -32,6 +32,17 @@
 - O estado atual da máquina sempre é uma destas instâncias de classe (NoQuarter, HasQuarter, Sold, SoldOut)
 - Quando uma ação é chamada, ela é delegada ao estado atual.
 
-> State - encapsula comportamentos baseados em estados e delega comportamentos ao estado atual
-> Strategy - as subclasses decidem como implementar os passos de um algoritmo
-> Template method - encapsula comportamentos intercambiaveis e usa delegação para decidir qual comportamento deve ser usado
+> ##### State - encapsula comportamentos baseados em estados e delega comportamentos ao estado atual
+> ##### Strategy - as subclasses decidem como implementar os passos de um algoritmo
+> ##### Template method - encapsula comportamentos intercambiaveis e usa delegação para decidir qual comportamento deve ser usado
+
+> #### * O padrão State permite que um objeto tenha muitos comportamentos diferentes baseados no seu estado interno.
+> #### * Ao contrario do que acontece numa máquina de estados procedural, o PAdrão State representa cada estado como uma classe completa
+> #### * O contexto obtém seu comportamento delegando tarefas ao objeto de estado atual, com o qual ele está composto.
+> #### * Quando encapsulamos cda estado numa classe, estamos limitando a abrangência de qq alteração que venha a ser necessária.
+> #### * Os padrões Strategy e State possuem o mesmo diagrama de classes, mas diferem na intenção.
+> #### * O Padrão Strategy tipicamente configura as classes de contexto com um comportamento ou algoritmo.
+> #### * O padrão State permite que um contexto mude seu comportamento de acordo com as mudanças de estado.
+> #### * As transições de estados podem ser controladas pelas classes de estado ou pelas classes de contexto.
+> #### * O uso do Padrão State normalmente aumenta o número de classes no seu projeto
+> #### * As classes de Estado podem ser compartilhadas entre instâncias do contexto.
